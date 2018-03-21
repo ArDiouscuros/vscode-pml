@@ -1,0 +1,142 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "PML",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#builtin-types"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.pml",
+				"match": "(?i)\\b(define|do|else|elsehandle|elseif|enddo|endfunction|endhandle|endif|endmethod|endobject|exit|form|function|handle|if|indices|is|member|method|object|return|setup|then|values)\\b"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.logical.pml",
+				"match": "(?i)\\b(and|eq|ge|gt|le|lt|ne|neq|not|or)\\b"
+			}]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"include": "#string-pipe"
+				},
+				{
+					"include": "#string-quote"
+				}
+			]
+		},
+		"string-pipe": {
+			"patterns": [
+				{
+					"name": "string.quoted.other",
+					"begin": "\\|",
+					"end": "\\|"
+				}
+			]
+		},
+		"string-quote": {
+			"patterns": [
+				{
+					"name": "string.quoted.single",
+					"begin": "'",
+					"end": "'"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"include": "#comment-line-double-dash"
+				},
+				{
+					"include": "#comment-line-dollar"
+				},
+				{
+					"include": "#comment-block"
+				}
+			]
+		},
+		"comment-line-double-dash": {
+			"patterns": [
+				{
+					"name": "comment.line.double-dash",
+					"match": "--.*$"
+				}
+			]
+		},
+		"comment-line-dollar": {
+			"patterns": [
+				{
+					"name": "comment.line.pml",
+					"match": "\\$\\*.*$"
+				}
+			]
+		},
+		"comment-block": {
+			"patterns": [
+				{
+					"name": "comment.block.pml",
+					"begin": "\\$\\(",
+					"end": "\\$\\)"
+				}
+			]
+		},
+		"builtin-types": {
+			"patterns": [{
+				"name": "support.type.pml",
+				"match": "(?i)\\b(any|array|boolean|dbref|real|string)\\b"
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"match": "\\d+(\\.\\d*)?|\\.\\d+"
+			}]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"include": "#symbol-local"
+				},
+				{
+					"include": "#symbol-global"
+				}
+			]
+		},
+		"symbol-local": {
+			"patterns": [{
+				"name": "variable.name.local.pml",
+				"match": "(?i)![a-z][a-z0-9]*"
+			}]
+		},
+		"symbol-global": {
+			"patterns": [{
+				"name": "variable.name.local.pml",
+				"match": "(?i)!![a-z][a-z0-9]*"
+			}]
+		}
+	},
+	"scopeName": "source.pml"
+}

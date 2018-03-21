@@ -1,0 +1,27 @@
+{
+    "name": "pml",
+    "displayName": "PML Language",
+    "description": "PML Language support for VS Code",
+    "version": "0.0.1",
+    "publisher": "swatteau",
+    "license": "Apache-2.0",
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pml",
+            "aliases": ["PML", "pml"],
+            "extensions": [".pml",".pmlmac",".pmlfnc",".pmlfrm",".pmlobj"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pml",
+            "scopeName": "source.pml",
+            "path": "./syntaxes/pml.tmLanguage.json"
+        }]
+    }
+}
