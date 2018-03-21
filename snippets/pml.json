@@ -1,0 +1,83 @@
+{
+	"Docstring": {
+		"prefix": "doc",
+		"body": [
+			"--------------------------------------------------------------------------------",
+			"-- $0",
+			"--------------------------------------------------------------------------------"
+		],
+		"description": "Insert a docstring block"
+	},
+	"Object definition": {
+		"prefix": "obj",
+		"body": [
+			"define object ${1:name}",
+			"    $0",
+			"endobject"
+		],
+		"description": "Insert an object definition block"
+	},
+	"Member definition": {
+		"prefix": "mem",
+		"body": [
+			"member .${1:name} is ${2:type}"
+		],
+		"description": "Insert a member definition"
+	},
+	"Method definition": {
+		"prefix": "meth",
+		"body": [
+			"define method .${1:name}(${2:args}) is ${3:type}",
+			"    $0",
+			"endmethod"
+		],
+		"description": "Insert a method definition block"
+	},
+	"If statement": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condition}) then",
+			"    $0",
+			"endif"
+		],
+		"description": "Insert a simple if statement"
+	},
+	"If-Else statement": {
+		"prefix": "ife",
+		"body": [
+			"if (${1:condition}) then",
+			"    $0",
+			"else",
+			"    ",
+			"endif"
+		],
+		"description": "Insert an if-else statement"
+	},
+	"Do loop over indices": {
+		"prefix": "doi",
+		"body": [
+			"do ${1:var} indices ${2:collection}",
+			"    $0",
+			"enddo"
+		],
+		"description": "Insert a do-indices loop"
+	},
+	"Do loop over values": {
+		"prefix": "dov",
+		"body": [
+			"do ${1:var} values ${2:collection}",
+			"    $0",
+			"enddo"
+		],
+		"description": "Insert a do-values loop"
+	},
+	"Handle statement": {
+		"prefix": "handle",
+		"body": [
+			"handle ${1:error}",
+			"    $0",
+			"endhandle"
+		],
+		"description": "Insert an handle statement"
+	}
+}
