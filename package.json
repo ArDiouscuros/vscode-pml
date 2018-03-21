@@ -22,6 +22,12 @@
             "language": "pml",
             "scopeName": "source.pml",
             "path": "./syntaxes/pml.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "pml",
+                "path": "./snippets/pml.json"
+            }
+        ]
     }
 }
